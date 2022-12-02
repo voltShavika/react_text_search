@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# React Full Text Search
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrate a full text Search query on a mongodb database over multiple fields.
 
-## Available Scripts
+### Mongo Collections Schema
 
-In the project directory, you can run:
+1. Company Collection
+  ```
+  {
+    "_id": ObjectId,
+    "name": String,
+    "url": "String
+  }
+  ```
+2. Ad Collection
+  ```
+  {
+    "_id": ObjectId,
+    "companyId": {type: ObjectId, ref: "Company"},
+    primaryText: String,
+    headline: String,
+    description: String,
+    CTA: String,
+    imageUrl: String
+  }
+  ```
 
-### `npm start`
+### Approach 1
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+We can use `$text` in mongodb over a compoundIndex of `{primaryText, headline, description}`. This would be fast and supports advance $search function.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+BUT. we also want to search on Company name, which is avaiable in differrent collection. `$text` cannot work jointly on 2 collections. So we need another approach
 
-### `npm test`
+### Approach 2
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We will join both collections by `$lookUp` and then `$unwind` in aggregations pipeline, and then pass a regex pattern in `$or` on all the fields required.
+This method in not advanced as above but it works fine for case.
 
-### `npm run build`
+Hence we are using Approach 2.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+@author: shavika619@gmail.com
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
