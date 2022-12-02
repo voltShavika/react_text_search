@@ -85,7 +85,7 @@ app.get("/ads", async (req, res) => {
             res.json(ads);
         })
         
-    }, 1000)
+    }, 0)
 
 })
 
