@@ -30,6 +30,9 @@ export default function SearchBar() {
             </div>
             <br/>
             <hr />
+            {
+                loading && <p>Loading....</p>
+            }
             <div className='row'>
                 {
                     ads.map((ad, i) => <Ad data={ad} key={i} />)

@@ -40,9 +40,52 @@ app.get("/load_test", async (req, res) => {
 
 app.get("/ads", async (req, res) => {
     setTimeout(async ()=> {
-        const ads = await AdModel.find().populate("companyId");
-        res.json(ads)
-    }, 2000)
+        const query = req.query.search
+        const exp = new RegExp('.*' + query + '.*', 'i');
+
+        const ads = AdModel.aggregate([
+            {
+                $lookup: {
+                    from: "companies",
+                    localField: "companyId",
+                    foreignField: "_id",
+                    as: "companyDetails"
+                }
+            },
+            {
+                $unwind: "$companyDetails"
+            },
+            {
+                $match: {
+                    $or: [
+                        {
+                            "companyDetails.name": {
+                                $regex: exp
+                            }
+                        },
+                        {
+                            "primaryText": {
+                                $regex: exp
+                            }
+                        },
+                        {
+                            "headline": {
+                                $regex: exp
+                            }
+                        },
+                        {
+                            "description": {
+                                $regex: exp
+                            }
+                        }
+                    ]
+                }
+            }
+        ]).exec((err, ads)=>{
+            res.json(ads);
+        })
+        
+    }, 1000)
 
 })
 

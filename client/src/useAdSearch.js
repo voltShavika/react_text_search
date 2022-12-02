@@ -10,10 +10,12 @@ export default function useAdSearch(query) {
     console.log("I am getting Called");
     setLoading(true);
     setError(false);
+    setAds([]);
     let cancel;
     axios({
         method: 'GET',
         url: "http://localhost:8000/ads",
+        params: {search: query},
         cancelToken: new axios.CancelToken(c => cancel=c)
     }).then(res => {
         setAds([...res.data])

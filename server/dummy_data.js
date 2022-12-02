@@ -8,7 +8,7 @@ const data = [
                 headline: "Relaxed Fit Men's Jeans",
                 description: "",
                 CTA: "Shop Now",
-                imageUrl: "https://drive.google.com/file/d/17kQiqGnkLEZZmnzLlWG7ZIlN6XbwAVfb/view?usp=sharing"
+                imageUrl: "https://raw.githubusercontent.com/voltShavika/react_text_search/main/images/levis.jpg"
 
             }
         ]
@@ -28,7 +28,7 @@ const data = [
                 headline: "Salesforce for Small Business",
                 description: "",
                 CTA: "Sign Up",
-                imageUrl: "https://drive.google.com/file/d/17huYmoSHdbgcNqfoO4yYYGIFf8X1243T/view?usp=sharing"
+                imageUrl: "https://raw.githubusercontent.com/voltShavika/react_text_search/main/images/salesforce.jpg"
 
             }
         ]
@@ -54,7 +54,7 @@ const data = [
                 headline: "Made With Recycled Plastic",
                 description: "Shop Back to School",
                 CTA: "Shop Now",
-                imageUrl: "https://drive.google.com/file/d/17huYmoSHdbgcNqfoO4yYYGIFf8X1243T/view?usp=sharing"
+                imageUrl: "https://raw.githubusercontent.com/voltShavika/react_text_search/main/images/cotopaxi.jpg"
 
             }
         ]
@@ -68,7 +68,7 @@ const data = [
                 headline: "Norm Macdonald's Nothing Special gives one last dose of the late comic",
                 description: "",
                 CTA: "Learn More",
-                imageUrl: "https://drive.google.com/file/d/17o3sgN_A6GKPwgZsEpneBYODhRs9tKga/view?usp=sharing"
+                imageUrl: "https://raw.githubusercontent.com/voltShavika/react_text_search/main/images/normMacdonald.jpg"
 
             }
         ]
@@ -88,7 +88,7 @@ const data = [
                 headline: "Valentino Hexagonal Metal Frame With Crystal Studs",
                 description: "",
                 CTA: "Shop Now",
-                imageUrl: "https://drive.google.com/file/d/17sz2UuPNcoHXz-U27EYcwmhkI1ZQUmPZ/view?usp=sharing"
+                imageUrl: "https://raw.githubusercontent.com/voltShavika/react_text_search/main/images/valentino.jpg"
 
             }
         ]
@@ -102,7 +102,7 @@ const data = [
                 headline: "Personalized skincare for dark spots, acne, and more.",
                 description: "Personalized skincare for dark spots, acne, and more. Results may vary.",
                 CTA: "Order Now",
-                imageUrl: "https://drive.google.com/file/d/17vzdu8jSulXgzk9rkJaHP7W1940pQaAV/view?usp=sharing"
+                imageUrl: "https://raw.githubusercontent.com/voltShavika/react_text_search/main/images/curology.jpg"
 
             }
         ]
@@ -116,7 +116,7 @@ const data = [
                 headline: "Cooler Summers Start Here",
                 description: "Shop Purple products, designed to help you sleep cool.",
                 CTA: "Shop Now",
-                imageUrl: "https://drive.google.com/file/d/17vrlQMchymHqlN35p4os23jYqQjFiUNq/view?usp=sharing"
+                imageUrl: "https://raw.githubusercontent.com/voltShavika/react_text_search/main/images/purple-display-ads.jpg"
 
             }
         ]
