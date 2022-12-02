@@ -39,8 +39,10 @@ app.get("/load_test", async (req, res) => {
 })
 
 app.get("/ads", async (req, res) => {
-    const ads = await AdModel.find().populate("companyId");
-    res.send(ads)
+    setTimeout(async ()=> {
+        const ads = await AdModel.find().populate("companyId");
+        res.json(ads)
+    }, 2000)
 
 })
 
