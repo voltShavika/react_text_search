@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import useAdSearch from '../useAdSearch';
+import Masonry from 'react-masonry-css';
+import '../masonry.css'
 
 function Ad(props){
     return (
-        <div className='col-sm-6 col-md-3 mb-4'>
-            <div className="card">
-                <img src={props.data.imageUrl} className='card-img-top' />
-                <div className="card-body">
-                    <h6 className="card-title">{props.data.headline}</h6>
-                    <p className="card-subtitle mb-2 text-muted">{props.data.primaryText}</p>
-                    <p className="card-text">{props.data.description}</p>
-                    <a className="btn btn-primary">{props.data.CTA}</a>
-                </div>
+        <div className="card m-1">
+            <img src={props.data.imageUrl} className='card-img-top' />
+            <div className="card-body">
+                <h6 className="card-title">{props.data.headline}</h6>
+                <p className="card-subtitle mb-2 text-muted">{props.data.primaryText}</p>
+                <p className="card-text">{props.data.description}</p>
+                <a className="btn btn-primary">{props.data.CTA}</a>
             </div>
         </div>
     )
@@ -33,11 +33,12 @@ export default function SearchBar() {
             {
                 loading && <p>Loading....</p>
             }
-            <div className='row'>
+            <Masonry breakpointCols={4} className="my-masonry-grid" columnClassName='my-masonry-grid-column'>
                 {
                     ads.map((ad, i) => <Ad data={ad} key={i} />)
                 }
-            </div>
+            </Masonry>
+            
         </>
     ) 
 }

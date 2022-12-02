@@ -17,6 +17,13 @@ const data = [
         company: "Puma",
         url: "puma.com",
         ads: [
+            {
+                primaryText: "Get a move on",
+                headline: "#ShockThem",
+                description: "Forever faster PUMA shoes",
+                CTA: "Shop Now",
+                imageUrl: "https://www.etonline.com/sites/default/files/styles/max_970x546/public/images/2018-07/selena-gomez-puma-ad-1280.jpg?h=c673cd1c&itok=tnApU_8Y"
+            }
         ]
     },
     {
@@ -37,12 +44,26 @@ const data = [
         company: "Adidas",
         url: "adidas.com",
         ads: [
+            {
+                primaryText: "Sports shoe Look good on you",
+                headline: "I aM Possible",
+                description: "Write your own history",
+                CTA: "Shop Now",
+                imageUrl: "https://approval.studio/wp-content/uploads/2020/07/branding-story-of-adidas.jpg"
+            }
         ]
     },
     {
         company: "Nike",
         url: "nike.com",
         ads: [
+            {
+                primaryText: "Just do it",
+                headline: "The Sneaker makes the man",
+                description: "Find your greatest SHOES",
+                CTA: "Shop Now",
+                imageUrl: "https://www.designyourway.net/blog/wp-content/uploads/2010/11/Nike-Print-Ads-12.jpg"
+            }
         ]
     },
     {
@@ -77,6 +98,13 @@ const data = [
         company: "Colgate",
         url: "colgate.com",
         ads: [
+            {
+                primaryText: "Get visible white teeth in just 30 days",
+                headline: "Colgate | A mothers choice",
+                description: "",
+                CTA: "Buy Here",
+                imageUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/3ecc0431945607.5667d623d325a.png"
+            }
         ]
     },
     {
